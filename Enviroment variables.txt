@@ -1,0 +1,8 @@
+PATH
+C:\frascati-runtime-1.4\bin
+
+FRASCATI_HOME
+C:\frascati-runtime-1.4
+
+JAVA_HOME
+C:\Program Files\Java\jdk1.6.0_23\
