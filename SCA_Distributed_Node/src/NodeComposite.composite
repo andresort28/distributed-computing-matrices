@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite 	xmlns="http://www.osoa.org/xmlns/sca/1.0" 
+			xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" 
+			name="NodeComposite">
+	  
+		  	<component name="multiplyComponent">
+			    <implementation.java class="sca.distributed.lib.MultiplyServiceImpl"/>
+			    
+			    <service name="multiplyService1">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2001" host="localhost" serviceName="rmiService" />
+			    </service>
+		  	</component>
+	  
+</composite>
