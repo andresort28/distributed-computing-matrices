@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite 	xmlns="http://www.osoa.org/xmlns/sca/1.0" 
+			xmlns:frascati="http://frascati.ow2.org/xmlns/sca/1.1" 
+			name="CoreComposite">
+	  
+		  	<service name="r" promote="controllerComponent/r">
+		  		<interface.java interface="java.lang.Runnable"/>
+			</service>
+		  
+		  	<component name="controllerComponent">
+			    <implementation.java class="sca.distributed.test.Controller"/>
+			    <service name="r">
+			    	<interface.java interface="java.lang.Runnable"/>
+			    </service>
+			    
+			    <reference name="readService" target="readComponent/readService">
+			      	<interface.java interface="sca.distributed.api.ReadService"/>
+			    </reference>
+			    
+			    <reference name="multiplyService1">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2001" host="localhost" serviceName="rmiService" />
+			    </reference>
+			    
+			    <reference name="multiplyService2">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2002" host="localhost" serviceName="rmiService" />
+			    </reference>
+			    
+				<reference name="multiplyService3">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2003" host="localhost" serviceName="rmiService" />
+			    </reference>			
+					
+				<reference name="multiplyService4">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2004" host="localhost" serviceName="rmiService" />
+			    </reference>			    
+			    
+				<reference name="multiplyService5">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2005" host="localhost" serviceName="rmiService" />
+			    </reference>
+			    
+			    <reference name="multiplyService6">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2006" host="localhost" serviceName="rmiService" />
+			    </reference>
+			    
+			    <reference name="multiplyService7">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2007" host="localhost" serviceName="rmiService" />
+			    </reference>
+			    
+			    <reference name="multiplyService8">
+			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
+			      	<frascati:binding.rmi port="2008" host="localhost" serviceName="rmiService" />
+			    </reference>
+<!--			    
+-->			    			    
+		  	</component>
+		  
+		  
+		  	<component name="readComponent">
+			    <implementation.java class="sca.distributed.lib.ReadServiceImpl"/>
+			    <service name="readService">
+			      	<interface.java interface="sca.distributed.api.ReadService"/>
+			    </service>
+		 	 </component>
+	  
+</composite>
