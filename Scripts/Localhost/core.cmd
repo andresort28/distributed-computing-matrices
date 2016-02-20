@@ -1,0 +1,1 @@
+start "Core" CMD /K frascati run CoreComposite -libpath core.jar -s r -m run
