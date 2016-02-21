@@ -16,6 +16,10 @@
 			    <reference name="readService" target="readComponent/readService">
 			      	<interface.java interface="sca.distributed.api.ReadService"/>
 			    </reference>
+
+			    <!--
+			    Here you need to rewrite the port and the host of each node according to the service name			    
+				-->	
 			    
 			    <reference name="multiplyService1">
 			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
@@ -56,8 +60,7 @@
 			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
 			      	<frascati:binding.rmi port="2008" host="localhost" serviceName="rmiService" />
 			    </reference>
-<!--			    
--->			    			    
+		    			    
 		  	</component>
 		  
 		  

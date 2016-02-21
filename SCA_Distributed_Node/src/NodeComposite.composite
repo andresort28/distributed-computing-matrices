@@ -6,12 +6,10 @@
 		  	<component name="multiplyComponent">
 			    <implementation.java class="sca.distributed.lib.MultiplyServiceImpl"/>
 			    
-
 			    <service name="multiplyService1">
 			      	<interface.java interface="sca.distributed.api.MultiplyService"/>
 			      	<frascati:binding.rmi port="2001" host="localhost" serviceName="rmiService" />
 			    </service>
 		  	</component>
-		  	
 	  
 </composite>
